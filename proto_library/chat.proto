@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+package chat;
+
+
+service Chat{
+	rpc ReceiveIncomingMessages(Empty) returns (stream IncomingMessage);
+
+}
+
+message Empty{
+
+}
+
+message IncomingMessage{
+	string text=1;
+}

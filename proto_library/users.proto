@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package users;
+
+service User{
+	rpc RegisterUser(RegistrationRequest) returns (RegistrationResponse);
+}
+
+
+message RegistrationRequest{
+	string phone_number=1;
+	string otp=2;
+}
+
+enum RegistrationError{
+	INVALID_OTP=0;
+	INVALID_PHONE=1;
+}
+
+message Token{
+	bytes access=1;
+	uint32 ttl_seconds=2;
+}
+
+message RegistrationResponse{
+	oneof data{
+		Token token = 1;
+		RegistrationError error=2;
+	}
+}
