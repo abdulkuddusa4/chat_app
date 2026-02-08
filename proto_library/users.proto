@@ -3,8 +3,34 @@ syntax = "proto3";
 package users;
 
 service User{
-	rpc RegisterUser(RegistrationRequest) returns (RegistrationResponse);
+	rpc RequestOtp(OtpRequest) returns (OtpRequestError);
 }
+
+message Empty{
+
+}
+
+message OtpRequestError{
+	oneof err{
+		string email=1;
+		string phone=2;
+	}
+}
+
+message OtpRequest{
+	oneof id{
+		string email=1;
+		string phone=2;
+	}
+}
+
+
+// message OtpRequest{
+// 	oneof id{
+// 		string email=1;
+// 		string phone=2;
+// 	}
+// }
 
 
 message RegistrationRequest{

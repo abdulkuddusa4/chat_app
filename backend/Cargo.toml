@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+fastrand = "2.3.0"
+lettre = { version = "0.11.19", features = ["smtp-transport", "tokio1", "tokio1-native-tls"] }
 prost = "0.14.3"
 tokio = { version = "1.49.0", features = ["macros", "rt-multi-thread"] }
 tokio-stream = "0.1.18"

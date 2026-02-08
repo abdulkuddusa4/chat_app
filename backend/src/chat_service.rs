@@ -15,36 +15,66 @@ pub use chat::{
     },
 };
 
+use crate::channel_layers::{Command, ChannelLayer};
+
 
 pub mod chat{
     tonic::include_proto!("chat");
 }
 
 
-#[derive(Default)]
-pub struct ChatService;
+pub struct ChatService{
+    channel_handler: tokio::sync::mpsc::Sender<Command<Result<IncomingMessage, Status>>>
+}
 
 
 #[tonic::async_trait]
 impl Chat for ChatService{
     type ReceiveIncomingMessagesStream =
     ReceiverStream<Result<IncomingMessage, Status>>;
+
     async fn receive_incoming_messages(
         &self,
-        skip: Request<Empty>
+        request: Request<Empty>
     )
     ->
     Result<Response<Self::ReceiveIncomingMessagesStream>, Status>
     {
-        let (sender, receiver) = tokio::sync::mpsc::channel(5);
-        tokio::spawn(async move {
-                loop{
-                    let mut st = String::new();
+        let user_id = match request.metadata().get("authorization"){
+            Some(auth_payload) =>{
 
-                    tokio::time::sleep(std::time::Duration::from_secs(1)).await;
-                    sender.send(Ok(IncomingMessage{text: String::from("my msg")})).await;
-                }
-            });
+            },
+            None => {
+                return Err(Status::unauthenticated("invalid or missing tokens"));
+            }
+        };
+        let (sender, receiver) = tokio::sync::mpsc::channel(5);
+        self.channel_handler.send(Command::Subscribe(("id".to_string(), sender))).await;
+
         Ok(Response::new(ReceiverStream::new(receiver)))
+    }
+
+
+    async fn send_message(
+        &self,
+        request: Request<IncomingMessage>
+    )
+    ->
+    Result<Response<Empty>, Status>
+    {   
+        let message = request.into_inner();
+        let cmd = Command::Message((message.to_addr.clone(), Ok(message)));
+        self.channel_handler.send(cmd).await;
+
+        Ok(Response::new(Empty{}))
+    }
+}
+
+
+impl ChatService{
+    pub fn new()->Self{
+        let (mut message_channel, channel_handler) = ChannelLayer::new();
+        tokio::spawn(message_channel.handover_to_runtime());
+        return ChatService{channel_handler};
     }
 }

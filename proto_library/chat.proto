@@ -6,6 +6,7 @@ package chat;
 
 service Chat{
 	rpc ReceiveIncomingMessages(Empty) returns (stream IncomingMessage);
+	rpc SendMessage(IncomingMessage) returns (Empty);
 
 }
 
@@ -14,5 +15,7 @@ message Empty{
 }
 
 message IncomingMessage{
-	string text=1;
+	string from_addr=1;
+	string to_addr=2;
+	bytes msg=3;
 }
