@@ -20,16 +20,20 @@ pub use users::{
     OtpRequestError,
     Empty,
     Token,
+
+    OtpVerifyRequest,
+    OtpVerifyResponse,
     user_server::{
         UserServer, User
     },
     registration_response::Data,
+    otp_verify_response::Res,
 };
 
 pub use users::otp_request::Id;
 pub use users::otp_request_error::Err as OtpError;
 
-
+use deadpool_redis::{redis::{cmd, FromRedisValue}, Config, Runtime};
 
 pub mod users{
     tonic::include_proto!("users");
@@ -38,6 +42,7 @@ pub mod users{
 
 pub struct UserService{
     mailing_cred: Credentials,
+    redis_pool: deadpool_redis::Pool
 }
 
 
@@ -50,10 +55,19 @@ impl User for UserService{
     -> Result<Response<OtpRequestError>, Status>
     {
         let otp_request = request.into_inner();
+        let mut redis_conn = self.redis_pool.get().await.unwrap();
+        let otp: String = std::iter::repeat_with(fastrand::alphanumeric).take(6).collect();
 
         match otp_request.id{
             Some(Id::Email(email)) =>{
-                let otp: String = std::iter::repeat_with(fastrand::alphanumeric).take(6).collect();
+
+                let x:() = cmd("SET").arg(&email)
+                    .arg( &otp)
+                    .arg("EX")
+                    .arg(20 as usize)
+                    .query_async::<()>(&mut redis_conn)
+                    .await.unwrap();
+
                 match self.send_mail(
                     &"Nam".to_owned(),
                     &email,
@@ -69,13 +83,41 @@ impl User for UserService{
         }
         Ok(Response::new(OtpRequestError{err: None}))
     }
+
+    async fn verify_otp(
+        &self,
+        request: Request<OtpVerifyRequest>
+    )
+    ->Result<Response<OtpVerifyResponse>, Status>
+    {
+        let mut redis_conn = self.redis_pool.get().await.unwrap();
+        let verify_request = request.into_inner();
+        let email_or_phone = &verify_request.email_or_phone;
+
+        let otp:String = match cmd("GET").arg(&email_or_phone).query_async(&mut redis_conn).await{
+            Ok(otp)=>otp,
+            Err(st)=>return Ok(Response::new(OtpVerifyResponse{res: Some(Res::ErrMsg(st.to_string()))}))
+        };
+
+        let otp_verify_msg = if otp==verify_request.otp{
+            OtpVerifyResponse{res: Some(Res::Uuid("something".to_string()))}
+        }else{
+            OtpVerifyResponse{res: Some(Res::ErrMsg("something".to_string()))}
+        };
+
+        return Ok(otp_verify_msg);
+
+    }
 }
 
 
 impl UserService{
     pub fn new()->Self{
+        let mut cfg = Config::from_url("redis://127.0.0.1:6379");
+        let pool = cfg.create_pool(Some(Runtime::Tokio1)).unwrap();
         Self{
-            mailing_cred: Credentials::new("abdulkuddusa4@gmail.com".to_owned(), "lypo whlp okjv ygii".to_owned())
+            mailing_cred: Credentials::new("abdulkuddusa4@gmail.com".to_owned(), "lypo whlp okjv ygii".to_owned()),
+            redis_pool: pool
         }
     }
 

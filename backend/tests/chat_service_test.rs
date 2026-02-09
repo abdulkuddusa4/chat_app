@@ -16,7 +16,7 @@ fn print_type_of<T>(obj: &T){
 async fn test_call(){
 	// let mut client = ChatClient::connect("http://[::1]:10000").await.unwrap();
 	let mut client = UserClient::connect("http://[::1]:10000").await.unwrap();
-	client.request_otp(Request::new(OtpRequest{id: Some(Id::Email("abdulkuddusa4".to_owned()))})).await.unwrap();
+	client.request_otp(Request::new(OtpRequest{id: Some(Id::Email("abdulkuddusa4@gmail.com".to_owned()))})).await.unwrap();
 	// let mut message_stream = client.receive_incoming_messages(Empty{}).await.unwrap().into_inner();
 
 	// dbg!("good(((((((((((((((");

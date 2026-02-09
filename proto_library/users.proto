@@ -4,6 +4,7 @@ package users;
 
 service User{
 	rpc RequestOtp(OtpRequest) returns (OtpRequestError);
+	rpc VerifyOtp(OtpVerifyRequest) returns (OtpVerifyResponse);
 }
 
 message Empty{
@@ -25,13 +26,17 @@ message OtpRequest{
 }
 
 
-// message OtpRequest{
-// 	oneof id{
-// 		string email=1;
-// 		string phone=2;
-// 	}
-// }
+message OtpVerifyRequest{
+	string email_or_phone=1;
+	string otp=2;
+}
 
+message OtpVerifyResponse{
+	oneof res{
+		string uuid=1;
+		string err_msg=2;
+	}
+}
 
 message RegistrationRequest{
 	string phone_number=1;
