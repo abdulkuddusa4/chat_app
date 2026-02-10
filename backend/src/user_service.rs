@@ -1,5 +1,7 @@
 #![allow(warnings,unused_variables,dead_code)]
 
+use sha2::Sha256;
+use sha2::Digest;
 use fastrand;
 
 use lettre::message::{Mailbox, header::ContentType};
@@ -64,7 +66,7 @@ impl User for UserService{
                 let x:() = cmd("SET").arg(&email)
                     .arg( &otp)
                     .arg("EX")
-                    .arg(20 as usize)
+                    .arg(2*60)
                     .query_async::<()>(&mut redis_conn)
                     .await.unwrap();
 
@@ -90,22 +92,32 @@ impl User for UserService{
     )
     ->Result<Response<OtpVerifyResponse>, Status>
     {
+        println!("{:?}", "dddddd");
         let mut redis_conn = self.redis_pool.get().await.unwrap();
         let verify_request = request.into_inner();
         let email_or_phone = &verify_request.email_or_phone;
 
         let otp:String = match cmd("GET").arg(&email_or_phone).query_async(&mut redis_conn).await{
             Ok(otp)=>otp,
-            Err(st)=>return Ok(Response::new(OtpVerifyResponse{res: Some(Res::ErrMsg(st.to_string()))}))
+            Err(st)=>return Ok(Response::new(OtpVerifyResponse{res: Some(Res::ErrMsg("may be otp expired".to_owned()))}))
         };
+        println!("{:?}", "kkkk");
 
         let otp_verify_msg = if otp==verify_request.otp{
-            OtpVerifyResponse{res: Some(Res::Uuid("something".to_string()))}
+
+            let mut hasher = Sha256::new();
+
+            hasher.update(email_or_phone.as_bytes());
+
+            let result = hasher.finalize();
+            let unique_id = hex::encode(result);
+
+            OtpVerifyResponse{res: Some(Res::Uuid(unique_id))}
         }else{
-            OtpVerifyResponse{res: Some(Res::ErrMsg("something".to_string()))}
+            OtpVerifyResponse{res: Some(Res::ErrMsg("Invalid Otp.".to_string()))}
         };
 
-        return Ok(otp_verify_msg);
+        return Ok(Response::new(otp_verify_msg));
 
     }
 }

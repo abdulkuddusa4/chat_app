@@ -9,6 +9,7 @@ use tokio_stream::{wrappers::ReceiverStream, Stream};
 
 pub use chat::{
     IncomingMessage,
+    ReceiveMessageRequest,
     Empty,
     chat_server::{
         ChatServer, Chat
@@ -35,21 +36,14 @@ impl Chat for ChatService{
 
     async fn receive_incoming_messages(
         &self,
-        request: Request<Empty>
+        request: Request<ReceiveMessageRequest>
     )
     ->
     Result<Response<Self::ReceiveIncomingMessagesStream>, Status>
     {
-        let user_id = match request.metadata().get("authorization"){
-            Some(auth_payload) =>{
-
-            },
-            None => {
-                return Err(Status::unauthenticated("invalid or missing tokens"));
-            }
-        };
+        let user_id = request.into_inner().id;
         let (sender, receiver) = tokio::sync::mpsc::channel(5);
-        self.channel_handler.send(Command::Subscribe(("id".to_string(), sender))).await;
+        self.channel_handler.send(Command::Subscribe((user_id, sender))).await;
 
         Ok(Response::new(ReceiverStream::new(receiver)))
     }

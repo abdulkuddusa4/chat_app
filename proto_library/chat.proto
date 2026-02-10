@@ -5,9 +5,13 @@ package chat;
 
 
 service Chat{
-	rpc ReceiveIncomingMessages(Empty) returns (stream IncomingMessage);
+	rpc ReceiveIncomingMessages(ReceiveMessageRequest) returns (stream IncomingMessage);
 	rpc SendMessage(IncomingMessage) returns (Empty);
 
+}
+
+message ReceiveMessageRequest{
+	string id=1;
 }
 
 message Empty{
