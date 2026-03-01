@@ -4,6 +4,7 @@ use user::OtpRequest;
 use user::otp_request::Id;
 
 use tonic::Request;
+use tonic::transport::Channel;
 
 mod user{
 	tonic::include_proto!("users");
@@ -56,10 +57,12 @@ fn mainssss() {
     println!("Is valid: {}", is_valid);
 }
 
-// #[tokio::test]
+#[tokio::test]
 async fn test_call(){
 	// let mut client = ChatClient::connect("http://[::1]:10000").await.unwrap();
-	let mut client = UserClient::connect("http://[::1]:10000").await.unwrap();
+    // let channel = std::sync::Arc::new(Channel::from_static("http://[::1]:10000").connect().await.unwrap());
+    let channel = Channel::from_static("http://[::1]:10000").connect().await.unwrap();
+	let mut client = UserClient::new(channel.clone());
 	// client.request_otp(Request::new(OtpRequest{id: Some(Id::Email("abdulkuddusa4@gmail.com".to_owned()))})).await.unwrap();
 	// let mut message_stream = client.receive_incoming_messages(Empty{}).await.unwrap().into_inner();
 
