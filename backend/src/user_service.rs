@@ -97,9 +97,10 @@ impl User for UserService{
         let verify_request = request.into_inner();
         let email_or_phone = &verify_request.email_or_phone;
 
+        println!("EMAIL: {}", &email_or_phone);
         let otp:String = match cmd("GET").arg(&email_or_phone).query_async(&mut redis_conn).await{
             Ok(otp)=>otp,
-            Err(st)=>return Ok(Response::new(OtpVerifyResponse{res: Some(Res::ErrMsg("may be otp expired".to_owned()))}))
+            Err(st)=>return Ok(Response::new(OtpVerifyResponse{res: Some(Res::ErrMsg(st.to_string()))}))
         };
         println!("{:?}", "kkkk");
 

@@ -78,6 +78,7 @@ impl Chat {
 
     /// Last-message preview for the sidebar.
     fn preview(&self) -> String {
+
         self.messages
             .last()
             .map(|m| {
@@ -201,7 +202,7 @@ fn IdentifierScreen(on_success: EventHandler<String>) -> Element {
         let ident = input.read().trim().to_string();
 
         if let Err(e) = validate_identifier(&ident) {
-            error.set("Helo brother!".to_owned());
+            error.set(e.to_owned());
             return;
         }
         on_success.call(ident);
@@ -258,35 +259,41 @@ fn OtpScreen(
     let mut otp_val = use_signal(String::new);
     let mut error   = use_signal(String::new);
 
-    let mut verify = move || async move{
-        let otp = otp_val.read().trim().to_string();
-        if otp.len() < 4 {
-            error.set("Please enter the complete OTP code.".to_string());
-            return;
-        }
-        let channel = use_context::<GlobalState>().rpc_channel.clone();
-        let mut user_client = UserClient::new(channel);
-        let verify_response = user_client.verify_otp(tonic::Request::new(OtpVerifyRequest{
-            email_or_phone: "".to_owned(),
-            otp
-        })).await.unwrap().into_inner();
-
-        match verify_response.res{
-            Some(otp_verify_response::Res::Uuid(uuid)) => {
-                on_success.call(());
-            },
-            Some(otp_verify_response::Res::ErrMsg(msg)) => todo!(),
-            _ => {
-                error.set("invalid otp".to_owned());
-            }
-        }
+    let cloned_email = email.to_owned();
+    let mut verify = use_callback(move |_:_| {
+        let inner_cloned = cloned_email.clone();
+        async move{
+                let otp = otp_val.read().trim().to_string();
+                if otp.len() < 4 {
+                    error.set("Please enter the complete OTP code.".to_string());
+                    return;
+                }
+                let channel = use_context::<GlobalState>().rpc_channel.clone();
+                let mut user_client = UserClient::new(channel);
+                let verify_response = user_client.verify_otp(tonic::Request::new(OtpVerifyRequest{
+                    email_or_phone: inner_cloned.clone(),
+                    otp
+                })).await.expect("FAILED TO GET PROPER MESSAGE ........").into_inner();
         
-    };
+                match verify_response.res{
+                    Some(otp_verify_response::Res::Uuid(uuid)) => {
+                        on_success.call(());
+                    },
+                    Some(otp_verify_response::Res::ErrMsg(msg)) => {
+                        error.set(msg)
+                    },
+                    _ => {
+                        error.set("invalid otp".to_owned());
+                    }
+                }
+                
+            }});
 
+    let cloned_email = email.clone();
     let resend = move |_| {
         otp_val.set(String::new());
         error.set(String::new());
-        let eml = email.clone();
+        let eml = cloned_email.clone();
         spawn(async {
             let global_context = use_context::<GlobalState>();
             let mut user_client = UserClient::new(global_context.rpc_channel.clone());
@@ -300,7 +307,6 @@ fn OtpScreen(
             ).await.unwrap();
             // identifier.set("otp ")
         });
-
     };
 
     rsx! {
@@ -323,16 +329,16 @@ fn OtpScreen(
                     autofocus: true,
                     oninput: move |e| {
                         // digits only, max 6
-                        let digits: String = e.value()
-                            .chars()
-                            .filter(|c| c.is_ascii_digit())
-                            .take(6)
-                            .collect();
-                        otp_val.set(digits);
+                        // let digits: String = e.value()
+                        //     .chars()
+                        //     .filter(|c| c.is_ascii_digit())
+                        //     .take(6)
+                        //     .collect();
+                        otp_val.set(e.value());
                         error.set(String::new());
                     },
                     onkeydown: move |e: Event<KeyboardData>| {
-                        if e.key() == Key::Enter { verify(); }
+                        if e.key() == Key::Enter { verify(0); }
                     },
                 }
 
@@ -342,7 +348,7 @@ fn OtpScreen(
 
                 button {
                     class: "auth-btn",
-                    onclick: move |_| verify(),
+                    onclick: move |_| verify(0),
                     "Verify & Continue  →"
                 }
 

@@ -1,0 +1,970 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mp",
+				"mpsc(use tokio::sync::mpsc)"
+			],
+			[
+				"mpsc",
+				"mpsc(use tokio::sync::mpsc)"
+			],
+			[
+				"to",
+				"tokio"
+			],
+			[
+				"gate",
+				"gateway-service"
+			],
+			[
+				"ty",
+				"type\ttype … = …;"
+			],
+			[
+				"wa",
+				"watch_history"
+			],
+			[
+				"mov",
+				"movie"
+			],
+			[
+				"Wat",
+				"WatchHistory"
+			],
+			[
+				"Vide",
+				"VideoProgressStatusSerializer"
+			],
+			[
+				"defa",
+				"defaults"
+			],
+			[
+				"va",
+				"validated_data"
+			],
+			[
+				"Vid",
+				"VideoProgressStatus"
+			],
+			[
+				"Epi",
+				"EpisodeSerializer"
+			],
+			[
+				"Mo",
+				"MovieDetailSerializer"
+			],
+			[
+				"prog",
+				"progresses"
+			],
+			[
+				"Vi",
+				"VideoProgressStatus"
+			],
+			[
+				"val",
+				"values_list"
+			],
+			[
+				"V",
+				"VideoProgressStatusSerializer"
+			],
+			[
+				"subst",
+				"subscribe_till"
+			],
+			[
+				"str",
+				"stripe_subscription_id"
+			],
+			[
+				"ca",
+				"cancel_subscription"
+			],
+			[
+				"mode",
+				"models"
+			],
+			[
+				"model",
+				"models"
+			],
+			[
+				"mod",
+				"models"
+			],
+			[
+				"De",
+				"Deserialize"
+			],
+			[
+				"print",
+				"println\tprintln!(…)"
+			],
+			[
+				"macro",
+				"macro_utils"
+			],
+			[
+				"proc",
+				"proc_macro_attribute"
+			],
+			[
+				"Log",
+				"LoginCache"
+			],
+			[
+				"ser",
+				"serde_json"
+			],
+			[
+				"js",
+				"json_st"
+			],
+			[
+				"u",
+				"user_id"
+			],
+			[
+				"prinln",
+				"println\tprintln!(…)"
+			],
+			[
+				"pri",
+				"print_type_of"
+			],
+			[
+				"prod",
+				"products"
+			],
+			[
+				"pro",
+				"product_db"
+			],
+			[
+				"Ac",
+				"ActiveValue"
+			],
+			[
+				"ac",
+				"actix_web_validator"
+			],
+			[
+				"H",
+				"HttpResponse"
+			],
+			[
+				"create",
+				"create_product"
+			],
+			[
+				"pr",
+				"product_db"
+			],
+			[
+				"Htt",
+				"HttpRequest"
+			],
+			[
+				"from",
+				"from_request"
+			],
+			[
+				"ActiMel",
+				"ActiveModel"
+			],
+			[
+				"Ite",
+				"IntoIterator"
+			],
+			[
+				"for",
+				"for_if_clause"
+			],
+			[
+				"For",
+				"ForIfClause"
+			],
+			[
+				"fo",
+				"for_if_clause"
+			],
+			[
+				"parse",
+				"parse_zero_or_more"
+			],
+			[
+				"P",
+				"Pat"
+			],
+			[
+				"un",
+				"unregister_device_token"
+			],
+			[
+				"sea",
+				"season"
+			],
+			[
+				"file",
+				"file_path"
+			],
+			[
+				"you",
+				"youtube_url"
+			],
+			[
+				"Req",
+				"RequestDb"
+			],
+			[
+				"Request",
+				"RequestDb"
+			],
+			[
+				"ex",
+				"extract_peaks"
+			],
+			[
+				"sam",
+				"sample_rate"
+			],
+			[
+				"samp",
+				"samplesArray"
+			],
+			[
+				"recor",
+				"recordedAudioData"
+			],
+			[
+				"pla",
+				"play_audio"
+			],
+			[
+				"aud",
+				"audio_samples_local"
+			],
+			[
+				"as",
+				"as_f32"
+			],
+			[
+				"as_",
+				"as_u32"
+			],
+			[
+				"sampl",
+				"samplesArray"
+			],
+			[
+				"sa",
+				"samplesArray"
+			],
+			[
+				"audio",
+				"audioBlob"
+			],
+			[
+				"my",
+				"MyVecField"
+			],
+			[
+				"F",
+				"FormFieldValidationError"
+			],
+			[
+				"form",
+				"form_result"
+			],
+			[
+				"up",
+				"upload_to_tiktok"
+			],
+			[
+				"pos",
+				"postal_code"
+			],
+			[
+				"ref",
+				"refresh_expires_at"
+			],
+			[
+				"Tikcnn",
+				"TikTokOauth2Connect"
+			],
+			[
+				"c",
+				"client_id"
+			],
+			[
+				"AUT",
+				"AUTH_CODE"
+			],
+			[
+				"au",
+				"auth_code"
+			],
+			[
+				"aut",
+				"auth_code"
+			],
+			[
+				"Ticln",
+				"TikTokOAuth2Client"
+			],
+			[
+				"acc",
+				"access_token_expires"
+			],
+			[
+				"han",
+				"handle_tiktok_auth_code"
+			],
+			[
+				"clie",
+				"client_secret"
+			],
+			[
+				"cli",
+				"client_id"
+			],
+			[
+				"con",
+				"container_id"
+			],
+			[
+				"pa",
+				"payload"
+			],
+			[
+				"media",
+				"media_type"
+			],
+			[
+				"med",
+				"media_type"
+			],
+			[
+				"Ins",
+				"InstaOauth2Connect"
+			],
+			[
+				"acce",
+				"access_token"
+			],
+			[
+				"rest_",
+				"rest_framework"
+			],
+			[
+				"sco",
+				"scopes"
+			],
+			[
+				"req",
+				"required_scopes"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "chat_app.sublime-project",
+			"settings":
+			{
+				"buffer_size": 2875,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"toggle_comment",
+					{
+						"block": false
+					},
+					"BgAAAAUBAAAAAAAACAEAAAAAAAAAAAAA6AAAAAAAAADrAAAAAAAAAAAAAADDAAAAAAAAAMYAAAAAAAAAAAAAAJsAAAAAAAAAngAAAAAAAAAAAAAAdgAAAAAAAAB5AAAAAAAAAAAAAABVAAAAAAAAAFgAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAHwEAAAAAAABtAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"left_delete",
+					null,
+					"AQAAAEcAAAAAAAAARwAAAAAAAAABAAAAKg",
+					"AQAAAAAAAAABAAAASAAAAAAAAABIAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					2,
+					"left_delete",
+					null,
+					"AgAAAEcAAAAAAAAARwAAAAAAAAABAAAAIkYAAAAAAAAARgAAAAAAAAABAAAAIg",
+					"AQAAAAAAAAABAAAASAAAAAAAAABIAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					11,
+					1,
+					"toggle_comment",
+					{
+						"block": false
+					},
+					"AQAAABEBAAAAAAAAEQEAAAAAAAADAAAALy8g",
+					"AQAAAAAAAAABAAAALgEAAAAAAAAuAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					14,
+					1,
+					"toggle_comment",
+					{
+						"block": false
+					},
+					"AgAAAHYAAAAAAAAAdgAAAAAAAAADAAAALy8gUgAAAAAAAABSAAAAAAAAAAMAAAAvLyA",
+					"AQAAAAAAAAABAAAAbAAAAAAAAACQAAAAAAAAAAAAAAAAAHFA"
+				],
+				[
+					17,
+					1,
+					"insert",
+					{
+						"characters": "backend"
+					},
+					"BwAAAFwAAAAAAAAAXQAAAAAAAAALAAAAYmFja2VuZF9hcHBdAAAAAAAAAF4AAAAAAAAAAAAAAF4AAAAAAAAAXwAAAAAAAAAAAAAAXwAAAAAAAABgAAAAAAAAAAAAAABgAAAAAAAAAGEAAAAAAAAAAAAAAGEAAAAAAAAAYgAAAAAAAAAAAAAAYgAAAAAAAABjAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAZwAAAAAAAABcAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					21,
+					1,
+					"insert",
+					{
+						"characters": "frontend"
+					},
+					"CAAAAHkAAAAAAAAAegAAAAAAAAAPAAAAYm9va2luZ19zZXJ2aWNlegAAAAAAAAB7AAAAAAAAAAAAAAB7AAAAAAAAAHwAAAAAAAAAAAAAAHwAAAAAAAAAfQAAAAAAAAAAAAAAfQAAAAAAAAB+AAAAAAAAAAAAAAB+AAAAAAAAAH8AAAAAAAAAAAAAAH8AAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAACBAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAeQAAAAAAAACIAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					24,
+					1,
+					"insert_snippet",
+					{
+						"contents": "\"$0\""
+					},
+					"AQAAAEYAAAAAAAAASAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAARgAAAAAAAABGAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					25,
+					1,
+					"insert",
+					{
+						"characters": "*"
+					},
+					"AQAAAEcAAAAAAAAASAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAARwAAAAAAAABHAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "frontend/src/main.rs",
+			"settings":
+			{
+				"buffer_size": 31752,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"pyright",
+				"Preferences: LSP-pyright Settings"
+			],
+			[
+				"terminus",
+				"Preferences: Terminus Key Bindings"
+			],
+			[
+				"Package Control: repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"ter",
+				"Terminal: Open"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"lsp",
+				"LSP: Enable Language Server in Project"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: upda",
+				"Package Control: Upgrade All Packages"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"LSP:",
+				"LSP-pyright: Create Pyright Configuration File"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"termin",
+				"Preferences: Terminus Command Palette"
+			],
+			[
+				"terminusView",
+				"Preferences: Terminus View Settings"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 605.0,
+		"history":
+		[
+			"exit()",
+			"exit",
+			"LSP.plugin.__dir__()",
+			"LSP.plugin.__dir__",
+			"LSP.plugin",
+			"LSP.__dir__()",
+			"import LSP",
+			"sublime.active_window().run_command(\"lsp_troubleshoot\")",
+			"print(sublime.active_window().settings_object)",
+			"print(sublime.active_window().settings_object)\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\n[print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]",
+			"sdf",
+			"print(sublime.active_window().settings_object)\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\n[print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]",
+			"print(sublime.active_window().__dir__())\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\n[print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]",
+			"import sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\n[print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]",
+			"import sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]\nimport sublime; [print(s) for s in sublime.active_window().workspace_value(\"lsp_servers\", {}).keys()]",
+			"sublime.active_window()",
+			"import sublime",
+			"__dir__",
+			"sys.clear()",
+			"import sys",
+			"clear"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/roni/chat_app/frontend",
+		"/home/roni/chat_app/frontend/src"
+	],
+	"file_history":
+	[
+		"/home/roni/Documents/wise_wolse_inquary_ai/gateway_service/src/main.rs",
+		"/home/roni/Documents/wise_wolse_inquary_ai/inquary.sublime-project",
+		"/home/roni/Documents/wise_wolse_inquary_ai/proto_library/messages.proto",
+		"/home/roni/Documents/wise_wolse_inquary_ai/booking_service/main_v2.py",
+		"/home/roni/Documents/wise_wolse_inquary_ai/backend_app/pyrightconfig.json",
+		"/home/roni/Documents/wise_wolse_inquary_ai/backend_app/oauth2_connects/google_oauth2.py",
+		"/home/roni/.cache/sublime-text/Package Storage/LSP-pyright/language-server/node_modules/pyright/dist/typeshed-fallback/stdlib/contextvars.pyi",
+		"/home/roni/Documents/wise_wolse_inquary_ai/backend_app/accounts/admin.py",
+		"/home/roni/Documents/wise_wolse_inquary_ai/backend_app/manage.py",
+		"/home/roni/Documents/wise_wolse_inquary_ai/pyrightconfig.json",
+		"/home/roni/Documents/wise_wolse_inquary_ai/pyright.json",
+		"/home/roni/Documents/wise_wolse_inquary_ai/backend_app/oauth2_connects/models.py",
+		"/home/roni/Documents/mompr_backend/accounts/views.py",
+		"/home/roni/Documents/mompr_backend/.env",
+		"/home/roni/Documents/mompr_backend/payment_app/models.py",
+		"/home/roni/Documents/mompr_backend/movie_series/views.py",
+		"/home/roni/Documents/mompr_backend/movie_series/models.py",
+		"/home/roni/Documents/mompr_backend/movie_series/filters.py",
+		"/home/roni/Documents/mompr_backend/movie_series/serializers.py",
+		"/home/roni/Documents/mompr_backend/payment_app/views.py",
+		"/home/roni/Documents/mompr_backend/payment_app/urls.py",
+		"/home/roni/Documents/mompr_backend/payment_app/stripe_utils.py",
+		"/home/roni/Documents/mompr_backend/.gitignore",
+		"/home/roni/Documents/mompr_backend/movie_series/urls.py",
+		"/home/roni/Documents/mompr_backend/movie_series/vdocipher_client.py",
+		"/home/roni/Documents/mompr_backend/MOMPR_BACKEND/settings.py",
+		"/home/roni/Documents/mompr_backend/accounts/request_serializers.py",
+		"/home/roni/Documents/mompr_backend/notification/utils.py",
+		"/home/roni/Documents/mompr_backend/movie_series/signals.py",
+		"/home/roni/Documents/mompr_backend/movie_series/utils.py",
+		"/home/roni/Documents/noel_perez_bot/database.py",
+		"/home/roni/Documents/noel_perez_bot/app_one.py",
+		"/home/roni/Documents/noel_perez_bot/app.py",
+		"/home/roni/multivendor_ecommerce_microservice/auth/openapi.json",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/main.rs",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/services.rs",
+		"/home/roni/multivendor_ecommerce_microservice/macro_utils/src/lib.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/src/schemas.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/.env",
+		"/home/roni/multivendor_ecommerce_microservice/common_service/src/schemas.rs",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/db/customer.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/.cargo/config.toml",
+		"/home/roni/multivendor_ecommerce_microservice/product/Cargo.toml",
+		"/home/roni/multivendor_ecommerce_microservice/auth/Cargo.toml",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/tests.rs",
+		"/home/roni/multivendor_ecommerce_microservice/common_service/src/lib.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/src/db/product.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/src/services.rs",
+		"/home/roni/multivendor_ecommerce_microservice/macro_utils/Cargo.toml",
+		"/home/roni/multivendor_ecommerce_microservice/auth/.cargo/config.toml",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/db/user.rs",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/db/refresh_token.rs",
+		"/home/roni/multivendor_ecommerce_microservice/auth/src/schemas.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/src/db/mod.rs",
+		"/home/roni/multivendor_ecommerce_microservice/product/src/main.rs",
+		"/home/roni/learn_proc_macro/my_utils/comp_macro/Cargo.toml",
+		"/home/roni/learn_proc_macro/my_utils/comp_macro/.cargo/config.toml",
+		"/home/roni/learn_proc_macro/.gitignore",
+		"/home/roni/learn_proc_macro/my_utils/src/lib.rs",
+		"/home/roni/learn_proc_macro/query.md",
+		"/home/roni/learn_proc_macro/my_utils/comp_macro/src/lib.rs",
+		"/home/roni/learn_proc_macro/my_utils/Cargo.toml",
+		"/home/roni/Documents/noel_perez_bot/noel_bot/app.py",
+		"/home/roni/Documents/noel_perez_bot/pyproject.toml",
+		"/home/roni/Documents/mompr_backend/fcm-cred.json",
+		"/home/roni/Documents/mompr_backend/movie_series/admin.py",
+		"/home/roni/Documents/mompr_backend/requirements.txt",
+		"/home/roni/Documents/mompr_backend/accounts/urls.py",
+		"/home/roni/Documents/mompr_backend/accounts/serializers.py",
+		"/home/roni/Documents/mompr_backend/notification/urls.py",
+		"/home/roni/Documents/mompr_backend/accounts/models.py",
+		"/home/roni/Documents/mompr_backend/accounts/admin.py",
+		"/home/roni/Documents/mompr_backend/notification/views.py",
+		"/home/roni/music_recognition/main_app/Cargo.toml",
+		"/home/roni/music_recognition/main_app/src/main.rs",
+		"/home/roni/music_recognition/main_app/src/shazam.rs",
+		"/home/roni/music_recognition/main_app/src/shazam/spectogram.rs",
+		"/home/roni/music_recognition/main_app/templates/search.html",
+		"/home/roni/music_recognition/main_app/src/models.rs",
+		"/home/roni/music_recognition/main_app/src/my_random.rs",
+		"/home/roni/music_recognition/main_app/src/download_helpers.rs",
+		"/home/roni/music_recognition/main_app/src/views.rs",
+		"/home/roni/music_recognition/main_app/src/migrations/m_0001_initial.rs",
+		"/home/roni/music_recognition/main_app/templates/upload.html",
+		"/home/roni/music_recognition/main_app/templates/index.html",
+		"/home/roni/music_recognition/main_app/.cargo/config.toml",
+		"/home/roni/music_recognition/main_app/src/forms.rs",
+		"/home/roni/music_recognition/main_app/src/utils.rs",
+		"/home/roni/music_recognition/main_app/src/tests.rs",
+		"/home/roni/music_recognition/main_app/src/player.rs",
+		"/home/roni/music_recognition/main_app/src/shazam/download_helpers.rs",
+		"/home/roni/Documents/thumplocal_backend/social_media_posting/urls.py",
+		"/home/roni/Documents/thumplocal_backend/social_media_posting/request_serializers.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/urls.py",
+		"/home/roni/Documents/thumplocal_backend/tests.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/views.py",
+		"/home/roni/Documents/thumplocal_backend/social_media_posting/views.py",
+		"/home/roni/Documents/thumplocal_backend/requirements.txt",
+		"/home/roni/Documents/thumplocal_backend/accounts/views.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/tiktok_oauth2.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/insta_oauth2.py",
+		"/home/roni/Documents/thumplocal_backend/accounts/serializers.py",
+		"/home/roni/Documents/thumplocal_backend/accounts/models.py",
+		"/home/roni/Documents/thumplocal_backend/THUMPLOCAL/settings.py",
+		"/home/roni/Documents/thumplocal_backend/social_media_posting/utils.py",
+		"/home/roni/Documents/thumplocal_backend/.env",
+		"/home/roni/Documents/thumplocal_backend/accounts/admin.py",
+		"/home/roni/Documents/thumplocal_backend/THUMPLOCAL/urls.py",
+		"/home/roni/Documents/thumplocal_backend/social_media_posting/ai_utils.py",
+		"/home/roni/Documents/thumplocal_backend/birdeye_utils.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/admin.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/models.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/serializers.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/utils.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/google_oauth2.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/insta_utils.py",
+		"/home/roni/Documents/thumplocal_backend/accounts/request_serializers.py",
+		"/home/roni/Documents/thumplocal_backend/oauth2_connects/apps.py",
+		"/home/roni/Documents/thumplocal_backend/accounts/urls.py",
+		"/home/roni/Documents/thumplocal_backend/accounts/utils.py",
+		"/home/roni/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+		"/home/roni/.config/sublime-text/Packages/Terminus/Default.sublime-keymap",
+		"/home/roni/Documents/thumplocal_backend/accounts/signals.py",
+		"/home/roni/Documents/thumplocal_backend/accounts/signals"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 119.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "chat_app.sublime-project",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930,
+								930
+							]
+						],
+						"settings":
+						{
+							"lsp_uri": "file:///home/roni/chat_app/chat_app.sublime-project",
+							"syntax": "Packages/JSON/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "frontend/src/main.rs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 31752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ":.'(",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "rust-analyzer"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///home/roni/chat_app/frontend/src/main.rs",
+							"show_definitions": false,
+							"syntax": "Packages/Rust/Rust.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.Panel One":
+	{
+		"height": 124.0,
+		"history":
+		[
+		]
+	},
+	"output.Panel Two":
+	{
+		"height": 124.0,
+		"history":
+		[
+		]
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "",
+	"project": "chat_app.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
