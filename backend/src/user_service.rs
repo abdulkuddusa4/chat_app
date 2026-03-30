@@ -56,6 +56,9 @@ impl User for UserService{
     )
     -> Result<Response<OtpRequestError>, Status>
     {
+        println!("DDDDD");
+        println!("DDDDD");
+        println!("DDDDD");
         let otp_request = request.into_inner();
         let mut redis_conn = self.redis_pool.get().await.unwrap();
         let otp: String = std::iter::repeat_with(fastrand::alphanumeric).take(6).collect();
@@ -113,7 +116,8 @@ impl User for UserService{
             let result = hasher.finalize();
             let unique_id = hex::encode(result);
 
-            OtpVerifyResponse{res: Some(Res::Uuid(unique_id))}
+            // OtpVerifyResponse{res: Some(Res::Uuid(unique_id))}
+            OtpVerifyResponse{res: Some(Res::Uuid(email_or_phone.to_owned()))}
         }else{
             OtpVerifyResponse{res: Some(Res::ErrMsg("Invalid Otp.".to_string()))}
         };
@@ -122,6 +126,8 @@ impl User for UserService{
 
     }
 }
+
+
 
 
 impl UserService{

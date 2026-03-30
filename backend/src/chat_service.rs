@@ -19,11 +19,9 @@ pub use chat::{
 
 use crate::channel_layers::{Command, ChannelLayer};
 
-
 pub mod chat{
     tonic::include_proto!("chat");
 }
-
 
 pub struct ChatService{
     channel_handler: tokio::sync::mpsc::Sender<Command<Result<IncomingMessage, Status>>>

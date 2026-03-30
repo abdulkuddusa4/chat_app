@@ -27,11 +27,14 @@ impl <T>ChannelLayer<T>{
 	pub async fn handover_to_runtime(mut self){
 		loop {
 			match self.receiver.recv().await{
-				Some(Command::Subscribe((addr, sender))) => {self.subscribers.insert(addr, sender);},
+				Some(Command::Subscribe((addr, sender))) => {
+					println!("subscribing {} ", addr);
+					self.subscribers.insert(addr, sender);
+				},
 				Some(Command::Message((addr, message))) => {
 					match self.subscribers.get(&addr){
 						Some(msg_receiver) => {msg_receiver.send(message).await;}
-						None => {dbg!("receiver is not active:");}
+						None => {dbg!(format!("receiver {} is not active:", addr));}
 					}
 				},
 				_ => {

@@ -16,7 +16,7 @@ fn print_type_of<T>(obj: &T){
 }
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let addr = "[::1]:10000".parse().unwrap();
+    let addr = "127.0.0.1:10000".parse().unwrap();
 
     print_type_of(&addr);
     println!("{:?}", addr);
@@ -24,6 +24,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let user_service_obj = user_service::UserService::new();
     let chat_service_obj = chat_service::ChatService::new();
+
 
     Server::builder()
         .add_service(user_service::UserServer::new(user_service_obj))
